@@ -1,1 +1,49 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@theme {
+    /* Fontes */
+    --font-poppins: 'Poppins', sans-serif;
+    /* Cores */
+    --color-azul: #22D3EE;
+    --color-verde: #CCF381;
+    --color-rosa: #FF6B6B;
+    --color-roxo: #A221FF;
+}
+
+/* Estilização da página */
+.page {
+    @apply w-full min-h-screen font-poppins bg-white
+}
+
+/* Estilização do header */
+header {
+    @apply w-full h-14 p-3 fixed top-0 left-0 z-10 
+           bg-gradient-to-b to-transparent 
+           backdrop-blur-md
+           flex justify-between items-center
+}
+
+header h1 {
+    @apply text-3xl font-medium text-white
+}
+
+header button{
+    @apply hover:drop-shadow-md transition-all cursor-pointer z-20
+}
+
+/* Estilização da section */
+section {
+    @apply w-full h-screen flex items-center p-3
+}
+
+/* Design das diferentes sections */
+.initial{
+    @apply bg-gradient-to-br from-azul to-verde
+}
