@@ -24,14 +24,14 @@ export default function SectionInitial({ ref }: SectionInitialProps) {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -50 }}
                 transition={{ delay: 0.5, duration: 0.5, ease: 'easeInOut' }}
-                src={ArtHome} alt="Arte - Section Home" className='w-1/2' />
-            <div className='w-1/2'>
+                src={ArtHome} alt="Arte - Section Home" className='w-full h-2/3 md:h-full md:w-1/2' />
+            <div className='w-full h-1/3 md:h-full md:w-1/2 flex flex-col items-center justify-center'>
                 <motion.h1
                     initial={{ opacity: 0, y: -50 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -50 }}
                     transition={{ delay: 0.5, duration: 0.5, ease: 'easeInOut' }}
-                    className='text-white text-center text-5xl w-full'
+                    className='text-white text-center text-6xl w-full'
                 >
                     full stack developer
                 </motion.h1>
@@ -40,9 +40,9 @@ export default function SectionInitial({ ref }: SectionInitialProps) {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -50 }}
                     transition={{ delay: 0.5, duration: 0.5, ease: 'easeInOut' }}
-                    className='flex items-center justify-center text-4xl text-white gap-4 w-full mt-4'>
+                    className='flex items-center justify-center text-5xl text-white gap-4 w-full mt-4'>
                     {tecnologies.map((tecnology, index) => (
-                        <tecnology.icon key={index} className={`text-${tecnology.color}`} />
+                        <tecnology.icon key={index} className={`hover:scale-110 duration-200 ease-in-out`} />
                     ))}
                 </motion.span>
             </div>

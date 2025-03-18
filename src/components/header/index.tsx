@@ -1,8 +1,11 @@
 import { DotsThreeCircle, X } from '@phosphor-icons/react';
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
+import ThemeCurrent from '../../hooks/themeCurrent';
 
-export default function Header() {
+export default function Header({ currentSection }: { currentSection: string }) {
+    let ColorCurrent = ThemeCurrent(currentSection);
+
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
 
@@ -23,6 +26,7 @@ export default function Header() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -50 }}
                 transition={{ delay: 0.5, duration: 0.5, ease: 'easeInOut' }}
+                style={{ color: ColorCurrent }}
             >
                 matheus sousa
             </motion.h1>
@@ -33,7 +37,7 @@ export default function Header() {
                 transition={{ delay: 0.5, duration: 0.5, ease: 'easeInOut' }}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 type='button'
-                className={isMenuOpen ? 'text-preto' : 'text-white'}
+                style={{ color: !isMenuOpen ? ColorCurrent : 'black' }}
             >
                 {!isMenuOpen ? <DotsThreeCircle size={35}/> : <X size={35} />}
             </motion.button>

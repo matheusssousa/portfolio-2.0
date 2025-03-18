@@ -15,6 +15,12 @@
     --color-verde: #CCF381;
     --color-rosa: #FF6B6B;
     --color-roxo: #A221FF;
+    --color-branco: #FFFFFF;
+    --color-preto: #000000;
+    --color-vermelho: #FF0000;
+    --color-laranja: #FFA500;
+    --color-cinza: #F5F5F5;
+    --color-cinza-escuro: #CBC9E2;
 }
 
 /* Estilização da página */
@@ -31,7 +37,7 @@ header {
 }
 
 header h1 {
-    @apply text-3xl font-medium text-white
+    @apply text-3xl font-medium
 }
 
 header button{
@@ -40,10 +46,13 @@ header button{
 
 /* Estilização da section */
 section {
-    @apply w-full h-screen flex items-center p-3
+    @apply w-full h-screen flex items-center p-3 flex-col md:flex-row justify-center 
 }
 
 /* Design das diferentes sections */
 .initial{
     @apply bg-gradient-to-br from-azul to-verde
+}
+.about-me{
+    @apply bg-cinza
 }

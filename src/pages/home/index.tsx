@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import Header from "../../components/header";
 import SectionInitial from "../../components/sections/initial";
+import Navigation from "../../components/navigation";
+import SectionAboutMe from "../../components/sections/about-me";
 
 type SectionsRefs = {
     [key: string]: React.RefObject<HTMLDivElement | null>;
@@ -51,8 +53,10 @@ export default function HomePage() {
 
     return (
         <div className="page">
-            <Header />
+            <Header currentSection={activeSection} />
             <SectionInitial ref={sectionsRefs.initial} />
+            <SectionAboutMe ref={sectionsRefs.about} currentSection={activeSection} />
+            <Navigation setCurrentSection={handleScrollTo} currentSection={activeSection} currentMap={currentMap} />
         </div>
     );
 }

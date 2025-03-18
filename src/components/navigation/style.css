@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+.StyledNavigate{
+    @apply w-3 h-24 fixed top-[51%] right-5 flex-col items-center justify-center hidden md:flex
+}
+
+li{
+    @apply w-3
+}
+
+.disable{
+    transition: ease 0.2s 100ms;
+    transform: rotate(45deg);
+    @apply w-3 h-3 border-2 my-2
+}
+
+.current{
+    transition: ease 0.2s 100ms;
+    transform: rotate(0) scale(1.5);
+    @apply w-3 h-3 border-2 my-2
+}
