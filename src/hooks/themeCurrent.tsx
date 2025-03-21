@@ -14,10 +14,10 @@ const ThemeCurrent = (sectionCurrent: ThemeCurrentProps) => {
             sectionColorSecondary = '#22D3EE';
             break;
         case 'projects':
-            sectionColorSecondary = '#6366F1';
+            sectionColorSecondary = '#CCF381';
             break;
         case 'contact':
-            sectionColorSecondary = '#F9F9F9';
+            sectionColorSecondary = '#6366F1';
             break;
         case 'Footer':
             sectionColorSecondary = '#CCF381';
