@@ -3,6 +3,7 @@ import Header from "../../components/header";
 import SectionInitial from "../../components/sections/initial";
 import Navigation from "../../components/navigation";
 import SectionAboutMe from "../../components/sections/about-me";
+import SectionProjects from "../../components/sections/projects";
 
 type SectionsRefs = {
     [key: string]: React.RefObject<HTMLDivElement | null>;
@@ -56,6 +57,7 @@ export default function HomePage() {
             <Header currentSection={activeSection} />
             <SectionInitial ref={sectionsRefs.initial} />
             <SectionAboutMe ref={sectionsRefs.about} currentSection={activeSection} />
+            <SectionProjects ref={sectionsRefs.projects} />
             <Navigation setCurrentSection={handleScrollTo} currentSection={activeSection} currentMap={currentMap} />
         </div>
     );

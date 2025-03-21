@@ -5,6 +5,7 @@
     src: url('../assets/fonts/Poppins-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
 @theme {
@@ -30,14 +31,14 @@
 
 /* Estilização do header */
 header {
-    @apply w-full h-14 p-3 fixed top-0 left-0 z-10 
-           bg-gradient-to-b to-transparent 
-           backdrop-blur-md
+    @apply w-full h-14 p-2 md:p-3 fixed top-0 left-0 z-10 
+           bg-gradient-to-b from-black/10 to-transparent 
+            backdrop-blur-xs
            flex justify-between items-center
 }
 
 header h1 {
-    @apply text-3xl font-medium
+    @apply text-xl md:text-3xl font-medium
 }
 
 header button{
@@ -46,7 +47,7 @@ header button{
 
 /* Estilização da section */
 section {
-    @apply w-full h-screen flex items-center p-3 flex-col md:flex-row justify-center 
+    @apply w-full h-full min-h-screen md:h-screen flex items-center p-2 md:p-3 flex-col md:flex-row justify-evenly md:justify-center 
 }
 
 /* Design das diferentes sections */
@@ -55,4 +56,11 @@ section {
 }
 .about-me{
     @apply bg-cinza
+}
+.projects{
+    @apply bg-gradient-to-br from-roxo to-rosa
+}
+
+.btn-project-link{
+    @apply text-white hover:scale-[1.05] transition-all duration-300 ease-in-out p-1 hover:drop-shadow-md hover:bg-branco hover:text-preto
 }
