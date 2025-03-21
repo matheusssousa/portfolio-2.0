@@ -8,11 +8,12 @@ type SectionAboutMeProps = {
 };
 
 export default function SectionAboutMe({ ref, currentSection }: SectionAboutMeProps) {
-    const shouldAnimate = currentSection === 'about-me';
+    const shouldAnimate = currentSection == 'about';
 
     return (
         <section className="about-me" ref={ref}>
-            <motion.div
+            {shouldAnimate && (
+                <motion.div
                 initial={shouldAnimate ? { opacity: 0 } : {}}
                 animate={shouldAnimate ? { opacity: 1 } : {}}
                 exit={shouldAnimate ? { opacity: 0 } : {}}
@@ -74,6 +75,7 @@ export default function SectionAboutMe({ ref, currentSection }: SectionAboutMePr
                     </div>
                 </motion.div>
             </motion.div>
+            )}
         </section>
     );
 }
