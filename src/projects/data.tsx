@@ -1,4 +1,5 @@
 import ImageStudeNotes from "../assets/images/screen-studenotes.png";
+import ImageLeLearn from "../assets/images/lelearn.png";
 
 const projects = [
     {
@@ -8,6 +9,14 @@ const projects = [
         link: "https://studenotes.vercel.app",
         github: "https://github.com/matheusssousa/studenotes-frontend",
         technologies: ["React", "Vite", "Laravel", "MySQL"],
+    },
+    {
+        title: "lelearn",
+        description: "Description of project 2.",
+        image: ImageLeLearn,
+        link: "https://llrn-frontend.vercel.app/login",
+        github: "https://github.com/mateusdayrell/lelearn",
+        technologies: ["React", "Node.js", "MySQL"],
     },
 ];
 

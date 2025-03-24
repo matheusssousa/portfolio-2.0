@@ -10,7 +10,7 @@ type SectionProjectsProps = {
 
 const SectionProjects = ({ ref }: SectionProjectsProps) => {
     return (
-        <section className="projects" ref={ref}>
+        <section className="projects" ref={ref} id="projects">
             <Suspense fallback={<div>Loading...</div>}>
                 <motion.div
                     initial={{ opacity: 0, y: -50 }}

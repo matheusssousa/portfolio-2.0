@@ -1,17 +1,14 @@
-import { useState } from "react";
 import { Project } from "../../projects/data";
 import { motion } from "framer-motion";
 import { GithubLogo, Link } from "@phosphor-icons/react";
 
 const ProjectItem = ({ project }: { project: Project }) => {
-    const [selected, setSelected] = useState(false);
 
     return (
         <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             transition={{ duration: 0.2, type: "spring", stiffness: 300 }}
-            onClick={() => setSelected(!selected)}
             style={{
                 backgroundImage: `url(${project.image})`,
             }}
