@@ -1,0 +1,32 @@
+import ImageStudeNotes from "../assets/images/screen-studenotes.png";
+import ImageLeLearn from "../assets/images/lelearn.png";
+
+const projects = [
+    {
+        title: "stude notes",
+        description: "Description of project 1.",
+        image: ImageStudeNotes,
+        link: "https://studenotes.vercel.app",
+        github: "https://github.com/matheusssousa/studenotes-frontend",
+        technologies: ["React", "Vite", "Laravel", "MySQL"],
+    },
+    {
+        title: "lelearn",
+        description: "Description of project 2.",
+        image: ImageLeLearn,
+        link: "https://llrn-frontend.vercel.app/login",
+        github: "https://github.com/mateusdayrell/lelearn",
+        technologies: ["React", "Node.js", "MySQL"],
+    },
+];
+
+export default projects;
+
+export type Project = {
+    title: string;
+    description: string;
+    image: string;
+    link: string;
+    github: string;
+    technologies: string[];
+};

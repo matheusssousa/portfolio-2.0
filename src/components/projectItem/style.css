@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+.project-item {
+    @apply ease-in-out relative
+}
+
+.selected {
+    @apply absolute w-1/2 h-60 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg z-10
+}
+
+.not-selected {
+    @apply w-full h-52 bg-cover bg-no-repeat grayscale hover:grayscale-0
+}

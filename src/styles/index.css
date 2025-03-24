@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@theme {
+    /* Fontes */
+    --font-poppins: 'Poppins', sans-serif;
+    /* Cores */
+    --color-azul: #22D3EE;
+    --color-verde: #CCF381;
+    --color-rosa: #FF6B6B;
+    --color-roxo: #A221FF;
+    --color-branco: #FFFFFF;
+    --color-preto: #000000;
+    --color-vermelho: #FF0000;
+    --color-laranja: #FFA500;
+    --color-cinza: #F5F5F5;
+    --color-cinza-escuro: #CBC9E2;
+    --color-roxo-escuro: #6366F1;
+}
+
+/* Estilização da página */
+.page {
+    @apply w-full min-h-screen font-poppins bg-white
+}
+
+/* Estilização do header */
+header {
+    @apply w-full h-14 p-2 md:p-3 fixed top-0 left-0 z-10 
+           bg-gradient-to-b from-black/10 to-transparent 
+            backdrop-blur-xs
+           flex justify-between items-center
+}
+
+header h1 {
+    @apply text-xl md:text-3xl font-medium
+}
+
+header button{
+    @apply hover:drop-shadow-md transition-all cursor-pointer z-20
+}
+
+/* Estilização da section */
+section {
+    @apply w-full h-full min-h-screen md:h-screen flex items-center p-2 md:p-3 flex-col md:flex-row justify-evenly md:justify-center 
+}
+
+/* Design das diferentes sections */
+.initial{
+    @apply bg-gradient-to-br from-azul to-verde
+}
+.about-me{
+    @apply bg-cinza
+}
+.projects{
+    @apply bg-gradient-to-br from-roxo to-rosa
+}
+.contact{
+    @apply bg-roxo-escuro flex-col justify-center gap-3 md:gap-5 text-white text-xl
+}
+
+/* Demais estilos */
+.btn-project-link{
+    @apply text-white hover:scale-[1.05] transition-all duration-300 ease-in-out p-1 hover:drop-shadow-md hover:bg-branco hover:text-preto
+}
+.icon{
+    @apply hover:bg-white hover:text-roxo-escuro transition-all duration-300 ease-in-out p-1 
+}
+.icon-menu{
+    @apply hover:bg-black hover:text-white transition-all duration-300 ease-in-out p-1 
+}
