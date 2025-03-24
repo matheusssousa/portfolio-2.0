@@ -1,6 +1,7 @@
 import React, { memo, lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import ArtHome from '../../assets/svg/artHome.svg';
+import { useTranslation } from 'react-i18next';
 
 // Carregamento assíncrono dos ícones
 const FaReact = lazy(() => import('react-icons/fa').then(module => ({ default: module.FaReact })));
@@ -19,6 +20,8 @@ type SectionInitialProps = {
 };
 
 const SectionInitial = ({ ref }: SectionInitialProps) => {
+  const { t } = useTranslation();
+
   const technologies = [
     { name: 'React', icon: FaReact },
     { name: 'JavaScript', icon: IoLogoJavascript },
@@ -48,7 +51,7 @@ const SectionInitial = ({ ref }: SectionInitialProps) => {
           transition={{ delay: 0.5, duration: 0.5, ease: 'easeInOut' }}
           className='text-white text-center text-3xl md:text-6xl w-full'
         >
-          Full Stack Developer
+          {t("fullstack")}
         </motion.h1>
         <motion.span
           initial={{ opacity: 0, y: -50 }}
