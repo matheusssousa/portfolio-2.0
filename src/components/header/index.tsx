@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState, memo } from 'react';
-import { DotsThreeCircle, X } from '@phosphor-icons/react';
+import { DotsThreeCircle, GithubLogo, LinkedinLogo, X } from '@phosphor-icons/react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ThemeCurrent from '../../hooks/themeCurrent';
+import { useTranslation } from 'react-i18next';
 
 // Componente memoizado para o botão do menu
 const MenuButton = memo(({ isMenuOpen, toggleMenu, color }: { isMenuOpen: boolean; toggleMenu: () => void; color: string }) => (
@@ -23,6 +24,7 @@ const Header = ({ currentSection }: { currentSection: string }) => {
   const ColorCurrent = ThemeCurrent(currentSection);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const { t, i18n } = useTranslation();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -62,12 +64,37 @@ const Header = ({ currentSection }: { currentSection: string }) => {
           <motion.div
             ref={menuRef}
             initial={{ height: 0, width: 0 }}
-            animate={{ height: 150, width: '15%' }}
+            animate={{ height: 190, width: '15%' }}
             exit={{ height: 0, width: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className='absolute bg-white top-2 right-2 z-10 shadow-lg rounded-lg'
+            transition={{ duration: 0.2, ease: 'easeInOut' }}
+            className='absolute bg-white top-2 right-2 z-10 shadow-lg flex flex-col justify-between p-2'
           >
-            {/* Conteúdo do menu */}
+            <motion.div
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -50 }}
+              transition={{ delay: 0.5, ease: 'easeInOut' }}
+            >
+              <span className='flex flex-col'>
+                <p className='mb-1 uppercase'>{t("sections")}</p>
+                <a href="#projects" className='text-cinza-escuro hover:text-black transition-all'>{t("projects")}</a>
+                <a href="#contact" className='text-cinza-escuro hover:text-black transition-all'>{t("contact")}</a>
+              </span>
+              <p className='mb-1 uppercase'>{t("language")}</p>
+              <span className='flex gap-2 text-cinza-escuro'>
+                <button onClick={() => i18n.changeLanguage('pt')} className='hover:text-black'>PT</button>
+                <button onClick={() => i18n.changeLanguage('en')} className='hover:text-black'>EN</button>
+              </span>
+              <div className='w-full md:w-[75%] h-px bg-black' />
+              <span className='flex gap-2 text-cinza-escuro'>
+                <a href="https://www.linkedin.com/in/matheusousab/" target="_blank" className="icon-menu">
+                  <LinkedinLogo size={22} />
+                </a>
+                <a href="https://github.com/matheusssousa" target="_blank" className="icon-menu">
+                  <GithubLogo size={22} />
+                </a>
+              </span>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
