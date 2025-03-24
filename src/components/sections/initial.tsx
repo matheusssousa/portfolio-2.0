@@ -16,7 +16,7 @@ const TechnologyIcon = memo(({ icon: Icon, name }: { icon: React.ElementType; na
 ));
 
 type SectionInitialProps = {
-  ref: React.RefObject<HTMLDivElement>;
+  ref: React.RefObject<HTMLDivElement | null>;
 };
 
 const SectionInitial = ({ ref }: SectionInitialProps) => {

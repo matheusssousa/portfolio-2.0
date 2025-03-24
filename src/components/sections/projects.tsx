@@ -5,7 +5,7 @@ import projects from "../../projects/data";
 const ProjectItem = lazy(() => import("../projectItem").then(module => ({ default: module.default })));
 
 type SectionProjectsProps = {
-    ref: RefObject<HTMLDivElement>;
+    ref: RefObject<HTMLDivElement | null>;
 };
 
 const SectionProjects = ({ ref }: SectionProjectsProps) => {

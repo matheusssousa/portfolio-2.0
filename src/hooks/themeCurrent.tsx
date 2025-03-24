@@ -1,11 +1,6 @@
-type ThemeCurrentProps = {
-    sectionCurrent: string;
-};
+const ThemeCurrent = (sectionCurrent: string): string => {
+    let sectionColorSecondary = '#F9F9F9';
 
-const ThemeCurrent = (sectionCurrent: ThemeCurrentProps) => {
-    let sectionColorSecondary;
-
-    console.log(sectionCurrent);
     switch (sectionCurrent) {
         case 'initial':
             sectionColorSecondary = '#F9F9F9';
@@ -23,7 +18,8 @@ const ThemeCurrent = (sectionCurrent: ThemeCurrentProps) => {
             sectionColorSecondary = '#CCF381';
             break;
         default:
-            return;
+            sectionColorSecondary = '#F9F9F9';
+            break;
     }
 
     return sectionColorSecondary;
