@@ -22,6 +22,7 @@
     --color-laranja: #FFA500;
     --color-cinza: #F5F5F5;
     --color-cinza-escuro: #CBC9E2;
+    --color-roxo-escuro: #6366F1;
 }
 
 /* Estilização da página */
@@ -60,7 +61,17 @@ section {
 .projects{
     @apply bg-gradient-to-br from-roxo to-rosa
 }
+.contact{
+    @apply bg-roxo-escuro flex-col justify-center gap-3 md:gap-5 text-white text-xl
+}
 
+/* Demais estilos */
 .btn-project-link{
     @apply text-white hover:scale-[1.05] transition-all duration-300 ease-in-out p-1 hover:drop-shadow-md hover:bg-branco hover:text-preto
+}
+.icon{
+    @apply hover:bg-white hover:text-roxo-escuro transition-all duration-300 ease-in-out p-1 
+}
+.icon-menu{
+    @apply hover:bg-black hover:text-white transition-all duration-300 ease-in-out p-1 
 }
