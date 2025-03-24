@@ -2,7 +2,7 @@ import { GithubLogo, LinkedinLogo } from "@phosphor-icons/react";
 import { useTranslation } from "react-i18next";
 
 type SectionContactProps = {
-    ref: React.RefObject<HTMLDivElement>;
+    ref: React.RefObject<HTMLDivElement | null>;
 };
 
 const SectionContact = ({ ref }: SectionContactProps) => {

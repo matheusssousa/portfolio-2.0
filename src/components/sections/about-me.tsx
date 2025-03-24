@@ -4,7 +4,7 @@ import ArtRoad from '../../assets/svg/artRoad.svg';
 import { motion } from 'framer-motion';
 
 type SectionAboutMeProps = {
-    ref: React.RefObject<HTMLDivElement>;
+    ref: React.RefObject<HTMLDivElement | null>;
     currentSection: string;
 };
 
