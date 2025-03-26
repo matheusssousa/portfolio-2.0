@@ -19,9 +19,11 @@ const ProjectItem = ({ project }: { project: Project }) => {
                     <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn-project-link">
                         <GithubLogo size={25} />
                     </a>
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn-project-link">
-                        <Link size={25} />
-                    </a>
+                    {project.link && (
+                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn-project-link">
+                            <Link size={25} />
+                        </a>
+                    )}
                 </div>
             </span>
         </motion.div>

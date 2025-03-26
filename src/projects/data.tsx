@@ -1,5 +1,6 @@
 import ImageStudeNotes from "../assets/images/screen-studenotes.png";
 import ImageLeLearn from "../assets/images/lelearn.png";
+import ImageMedicalApp from "../assets/images/medical-screen.png";
 
 const projects = [
     {
@@ -18,6 +19,13 @@ const projects = [
         github: "https://github.com/mateusdayrell/lelearn",
         technologies: ["React", "Node.js", "MySQL"],
     },
+    {
+        title: "medical app",
+        description: "Description of project 3.",
+        image: ImageMedicalApp,
+        github: "https://github.com/matheusssousa/gestao-medica",
+        technologies: ["Laravel", "MySQL", "Docker"],
+    }
 ];
 
 export default projects;
